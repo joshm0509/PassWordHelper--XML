@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Reflection;
 
 namespace PassWordHelper__XML.Classes
 {
@@ -67,6 +69,33 @@ namespace PassWordHelper__XML.Classes
             
 
         }
+
+        public void ReadExcelFile(string input_fn)
+        {
+            Excel.Application xlApp;
+            Excel.Workbook wb;
+            Excel.Worksheet ws;
+            Object misvalue = Missing.Value;
+            xlApp = new Excel.Application();
+            string fn;
+
+
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                ofd.InitialDirectory = "c:\\";
+                ofd.Filter = "XML Files (*.xml)|*.xml";
+
+                activeFilePath = ofd.FileName;
+            }
+
+            wb = xlApp.Workbooks.Open(activeFilePath);
+
+
+
+        }
+
 
         public void saveAccountList()
         {
