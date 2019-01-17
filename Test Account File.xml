@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUserAccount xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <UserAccount>
+    <UserName>JoshMiller</UserName>
+    <PassWord>password123</PassWord>
+    <LoginAcct>MyAccount.Com</LoginAcct>
+    <NoteField>this is a test account</NoteField>
+  </UserAccount>
+  <UserAccount>
+    <UserName>joshMiller23</UserName>
+    <PassWord>word_pass1</PassWord>
+    <LoginAcct>bank.org</LoginAcct>
+    <NoteField />
+  </UserAccount>
+</ArrayOfUserAccount>

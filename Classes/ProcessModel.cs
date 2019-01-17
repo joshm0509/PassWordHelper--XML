@@ -75,6 +75,7 @@ namespace PassWordHelper__XML.Classes
             Excel.Application xlApp;
             Excel.Workbook wb;
             Excel.Worksheet ws;
+            Excel.Range rng;
             Object misvalue = Missing.Value;
             xlApp = new Excel.Application();
             string fn;
@@ -85,12 +86,17 @@ namespace PassWordHelper__XML.Classes
             if(ofd.ShowDialog() == DialogResult.OK)
             {
                 ofd.InitialDirectory = "c:\\";
-                ofd.Filter = "XML Files (*.xml)|*.xml";
+                ofd.Filter = "Excel Files (*.xls)|*.xlsm, *.csv";
 
                 activeFilePath = ofd.FileName;
             }
 
             wb = xlApp.Workbooks.Open(activeFilePath);
+            ws = (Excel.Worksheet)wb.Worksheets.get_Item(2);
+            rng = ws.UsedRange;
+
+
+            
 
 
 
